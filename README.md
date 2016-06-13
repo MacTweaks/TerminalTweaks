@@ -1,4 +1,6 @@
-## A Collection of Terminal Tweaks for Mac OS X Hosted by [MacTweaks](https://www.mactweaks.net)
+**Hosted by [MacTweaks](http://www.mactweaks.net)**
+
+## A Collection of Terminal Tweaks for Mac OS X
 
 **Notes**
 
@@ -22,14 +24,7 @@
 * 'NSPaletteFont' utility window title bar
 * 'NSTitleBarFont' title bar 
 
-
-
-
-------
-
-
-
-
+--
 
 **Plain Text In Mail**
 
