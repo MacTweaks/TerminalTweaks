@@ -1,6 +1,6 @@
-#### A Collection of Terminal Tweaks for Mac OS X Hosted by [MacTweaks](https://www.mactweaks.net)
+## A Collection of Terminal Tweaks for Mac OS X Hosted by [MacTweaks](https://www.mactweaks.net)
 
-#### Notes
+**Notes**
 
 * Most of these 'tweaks' edit .plist files in ~/Library/Preferences. To use them simply paste a command into a Terminal window. 
 * You can revert changes by deleting the appropriate .plist file or by replacing TRUE/FALSE. 
@@ -11,7 +11,10 @@
 * cd means change directory
 * files with a space in their name require a backslash (DVD\ Player.app) or quotation marks ("DVD Player.app")
 
-#### Change System Fonts
+--
+
+**Change System Fonts**
+
 * These are the default fonts and sizes
 * To use these commands per application replace -g with -app followed by the name of the application (-app Bean NSTitleBarFont).
 * To use these commands on applications located within a folder first cd into that directory.
