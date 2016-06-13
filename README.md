@@ -1,3 +1,29 @@
+#### Terminal Tweaks
+
+* Most of these 'tweaks' edit .plist files in ~/Library/Preferences. To use them simply paste a command into a Terminal window. 
+* You can revert changes by deleting the appropriate .plist file or by replacing TRUE/FALSE. 
+* I recommend testing these tweaks in a temporary account and turning on 'fast user switching'.
+* You can edit .plist files directly by opening them in xcode.
+* Use 'sudo' at the beginning of a command to edit locked files.
+* Drag and drop files and folders into a terminal window to add its path.
+* cd means change directory
+* files with a space in their name require a backslash (DVD\ Player.app) or quotation marks ("DVD Player.app")
+
+#### Change System Fonts
+* These are the default fonts and sizes
+* To use these commands per application replace -g with -app followed by the name of the application (-app Bean NSTitleBarFont).
+* To use these commands on applications located within a folder first cd into that directory.
+* 'NSBoldSystemFont' safari tab bar
+* 'NSPaletteFont' utility window title bar
+* 'NSTitleBarFont' title bar 
+
+
+
+
+***
+
+
+
 
 **Plain Text In Mail**
 
