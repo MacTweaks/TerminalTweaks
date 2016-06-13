@@ -1,4 +1,6 @@
-#### Terminal Tweaks
+#### A Collection of Terminal Tweaks for Mac OS X Hosted by [MacTweaks](https://www.mactweaks.net)
+
+#### Notes
 
 * Most of these 'tweaks' edit .plist files in ~/Library/Preferences. To use them simply paste a command into a Terminal window. 
 * You can revert changes by deleting the appropriate .plist file or by replacing TRUE/FALSE. 
