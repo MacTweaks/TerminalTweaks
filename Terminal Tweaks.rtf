@@ -1,0 +1,238 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11905\paperh16837\margl1011\margr1011\margb1445\margt1009\vieww8400\viewh19040\viewkind0\viewscale124
+\deftab720
+\pard\pardeftab720\sl260
+
+\f0\b\fs16 \cf0 Terminal Tweaks
+\b0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+\cf0 \'95 Most of these 'tweaks' edit .plist files in ~/Library/Preferences. To use them simply paste a command into a Terminal window. \
+\
+\'95 You can revert changes by deleting the appropriate .plist file or by replacing TRUE/FALSE. \
+\
+\'95 I recommend testing these tweaks in a temporary account and turning on 'fast user switching'.\
+\
+\'95 You can edit .plist files directly by opening them in xcode.\
+\
+\'95 Use 'sudo' at the beginning of a command to edit locked files.\
+\
+\pard\pardeftab720\sl260
+\cf0 \'95 Drag and drop files and folders into a terminal window to add its path.\
+\
+\'95 <> delete the angled brackets at the beginning and end of a command.\
+\
+\'95 cd means change directory\
+\
+\'95 files with a space in their name require a backslash (DVD\\ Player.app) or quotation marks ("DVD Player.app")\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+
+\b \cf0 Change System Fonts\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+
+\b0 \cf0 \'95 These are the default fonts and sizes\
+\
+\'95 To use these commands per application replace -g with -app followed by the name of the application (-app Bean NSTitleBarFont).\
+\
+\'95 To use these commands on applications located within a folder first cd into that directory.\
+\
+\'95\'a0'NSBoldSystemFont' safari tab bar\
+\
+\'95\'a0'NSPaletteFont' utility window title bar\
+\
+\'95\'a0'NSTitleBarFont' title bar \
+\pard\pardeftab720\sl260
+\cf0 \
+\page \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf0 Plain Text In Mail\
+
+\b0 defaults write com.apple.mail PreferPlainText -bool TRUE\
+
+\b \
+Disable And Hide Spotlight\
+
+\b0 sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search; killall SystemUIServer\
+
+\b \
+Disable And Hide Notifications\
+
+\b0 sudo defaults write /System/Library/LaunchAgents/com.apple.notificationcenterui KeepAlive -bool FALSE\
+
+\b \
+Expand Print Panel By Default\
+
+\b0 defaults write -g PMPrintingExpandedStateForPrint -bool TRUE\
+\
+
+\b Expand Save Panel By Default\
+
+\b0 defaults write -g NSNavPanelExpandedStateForSaveMode -bool TRUE\
+
+\b \
+Disable Mission Control Animation\
+
+\b0 defaults write com.apple.dock expose-animation-duration -int 0; killall Dock\
+\
+
+\b Show All Hidden Files\
+
+\b0 defaults write com.apple.finder AppleShowAllFiles TRUE\
+\
+
+\b Disable Tooltips\
+
+\b0 defaults write -g NSInitialToolTipDelay -int 999999; killall Finder\
+\
+
+\b Enable Text Selection In Quicklook\
+
+\b0 defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder\
+\
+
+\b Disable Quick Look Window Animation\
+
+\b0 defaults write -g QLPanelAnimationDuration -float 0; killall Finder\
+\
+
+\b Disable New Window Animation\
+
+\b0 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool FALSE; killall SystemUIServer\
+\
+
+\b Disable Dialog Box Animation\
+
+\b0 defaults write NSGlobalDomain NSWindowResizeTime 0.001\
+\
+
+\b Hide Applications\
+
+\b0 sudo chflags hidden /path/to/file\
+\
+
+\b Disable Autosave/Versions And Enable \'92Save-As\'92\
+
+\b0 defaults write -g ApplePersistence -bool no\
+\
+
+\b Disable Rubber Band Scrolling\
+
+\b0 defaults write -g NSScrollViewRubberbanding -int 0; killall Finder\
+\
+
+\b Disable Rubber Band Scrolling In Itunes\
+
+\b0 defaults write com.apple.iTunes disable-elastic-scroll -bool TRUE\
+\
+
+\b Set Path Bar To Home Directory\
+
+\b0 defaults write com.apple.finder PathBarRootAtHome -bool TRUE; killall Finder\
+\
+
+\b Show Full Path In Finder Title Bar\
+
+\b0 defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE\
+\
+
+\b Hide 'Automatically Add To Itunes' Folder\
+
+\b0 chflags hidden ~/Music/"Automatically Add to iTunes.localized"\
+\
+
+\b Change Default Screenshot Location\
+
+\b0 defaults write com.apple.screencapture location /path/to/destination; killall SystemUIServer\
+\
+
+\b Single App Mode\
+
+\b0 defaults write com.apple.dock single-app -bool TRUE; killall Dock\
+\
+
+\b Disable Dashboard\
+
+\b0 defaults write com.apple.dock single-app -bool TRUE; killall Dock\
+\
+
+\b Trash Folder On Desktop\
+
+\b0 ln -s ~/.Trash ~/Desktop/Trash\
+\
+
+\b Change System Fonts\
+
+\b0 defaults write -g NSBoldSystemFont LucidaGrande-Bold\'a0\
+defaults write -g NSBoldSystemFontSize -int 13\'a0\
+defaults write -g NSFixedPitchFont Menlo-Regular\'a0\
+defaults write -g NSFixedPitchFontSize -int 11\'a0\
+defaults write -g NSFont Helvetica\'a0\
+defaults write -g NSFontSize -int 12\'a0\
+defaults write -g NSLabelFont LucidaGrande\'a0\
+defaults write -g NSLabelFontSize -int 10\'a0\
+defaults write -g NSMessageFont LucidaGrande\'a0\
+defaults write -g NSMessageFontSize -int 13\'a0\
+defaults write -g NSPaletteFont LucidaGrande\'a0\
+defaults write -g NSPaletteFontSize -int 10\'a0\
+defaults write -g NSSystemFont LucidaGrande\'a0\
+defaults write -g NSSystemFontSize -int 13\
+defaults write -g NSTitleBarFont LucidaGrande\'a0\
+defaults write -g NSTitleBarFontSize -int 13\'a0\
+defaults write -g NSToolTipsFont LucidaGrande\'a0\
+defaults write -g NSToolTipsFontSize -int 11\
+\
+
+\b Lock Dock\
+
+\b0 defaults write com.apple.Dock contents-immutable -bool TRUE; killall Dock\
+\
+
+\b 2D Dock\
+
+\b0 defaults write com.apple.dock no-glass -boolean TRUE; killall Dock\
+\
+
+\b Disable Dock\
+
+\b0 defaults write com.apple.dock autohide-time-modifier -int 999999 && defaults write com.apple.Dock autohide-delay -float 999999; killall Dock\
+\
+
+\b Resize Dock\
+
+\b0 defaults write com.apple.dock tilesize -int 34\
+\
+
+\b Show Dock Animation Speed\
+
+\b0 defaults write com.apple.dock autohide-time-modifier -int 1\
+\
+
+\b Hide Dock Animation Speed\
+
+\b0 defaults write com.apple.Dock autohide-delay -float 1\
+\
+
+\b Disable Dock Animation\
+
+\b0 defaults write com.apple.dock autohide-time-modifier -int 0.1 && defaults write com.apple.Dock autohide-delay -float 0.1; killall Dock\
+\
+
+\b Transparent Icon For Hidden Applications\
+
+\b0 defaults write com.apple.dock showhidden -bool TRUE; killall Dock\
+\
+
+\b Disable Bouncing Applications In Dock\
+
+\b0 defaults write com.apple.dock no-bouncing -bool TRUE; killall Dock\
+\
+\
+\
+\
+\
+
+{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}}
